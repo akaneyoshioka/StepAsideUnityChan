@@ -31,7 +31,7 @@ public class ItemGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//unityちゃんの位置によってアイテムを生成
-		if(this.unitychan.transform.position.z<=startPos-50&&this.unitychan.transform.position.z<goalPos){
+		if(this.unitychan.transform.position.z>=startPos-50&&this.unitychan.transform.position.z<goalPos){
 			Debug.Log ("OK");
 			//どのアイテムを出すのかをランダムに設定
 			int num=Random.Range(1,11);
@@ -62,9 +62,5 @@ public class ItemGenerator : MonoBehaviour {
 			}
 			startPos += 15;
 		}
-	}
-
-	void OnBecameInvisible(){
-		Destroy (this.gameObject);
 	}
 }
